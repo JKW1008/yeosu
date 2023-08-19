@@ -33,8 +33,11 @@ export default function MenuItems({ items }) {
   return (
     <div ref={ref} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {items.subMenu ? (
-        <div className="relative">
-          <div onClick={() => setDropDown((prev) => !prev)}>
+        <div className="relative group cursor-pointer">
+          <div
+            className="group-hover:text-blue-700"
+            onClick={() => setDropDown((prev) => !prev)}
+          >
             <h1>{items.mainTitle}</h1>
           </div>
           {/* submenu ui */}

@@ -6,7 +6,7 @@ export default function DropDown({ subMenus, dropDown }) {
     <div
       className={`${
         dropDown ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0"
-      } absolute top-6 w-36 py-[30px] -translate-x-4 transition-all duration-300 origin-top`}
+      } absolute top-6 w-36 py-[30px] -translate-x-4 transition-all duration-500 origin-top`}
     >
       <div className="flex flex-col rouded-b shadow-md bg-white space-y-2 px-2 py-4 w-full">
         {subMenus.map(({ subTitle, url }, index) => (
