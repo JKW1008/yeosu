@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 export default function MenuItems({ items }) {
   const [dropDown, setDropDown] = useState(false);
   let ref = useRef();
-  console.log(ref);
+
+  console.log(dropDown);
 
   useEffect(() => {
     const handler = (event) => {
@@ -21,13 +22,23 @@ export default function MenuItems({ items }) {
       document.removeEventListener("touchstart", handler);
     };
   }, [dropDown]);
+
+  const onMouseEnter = () => {
+    window.innerWidth > 960 && setDropDown(true);
+  };
+
+  const onMouseLeave = () => {
+    window.innerWidth > 960 && setDropDown(false);
+  };
   return (
-    <div>
-      {items.submenu ? (
+    <div ref={ref} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      {items.subMenu ? (
         <div>
-          <h1>{items.mainTitle}</h1>
+          <div onClick={() => setDropDown((prev) => !prev)}>
+            <h1>{items.mainTitle}</h1>
+          </div>
           {/* submenu ui */}
-          <DropDown subMenus={items.subMenu} />
+          <DropDown dropDown={dropDown} subMenus={items.subMenu} />
         </div>
       ) : (
         <h1>{items.mainTitle}</h1>
