@@ -33,7 +33,7 @@ export default function MenuItems({ items }) {
   return (
     <div ref={ref} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {items.subMenu ? (
-        <div>
+        <div className="relative">
           <div onClick={() => setDropDown((prev) => !prev)}>
             <h1>{items.mainTitle}</h1>
           </div>
