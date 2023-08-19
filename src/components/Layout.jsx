@@ -10,8 +10,8 @@ export default function Layout({ children }) {
         <div className="relative max-w-7xl w-full h-full flex justify-center items-center text-sm">
           {/* 메뉴리스트 */}
           <ul className="flex space-x-16 text-lg z-10">
-            {menuItems.map((menu, index) => (
-              <MenuItems items={menu} key={index} />
+            {menuItems.map((item, index) => (
+              <MenuItems items={item} key={index} />
             ))}
           </ul>
           {/* 로고 */}
