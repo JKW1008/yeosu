@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "../asset/Logo";
 import { menuItems } from "../lib/menuItems";
 import MenuItems from "./MenuItems";
@@ -6,7 +7,7 @@ export default function Layout({ children }) {
   return (
     <div>
       {/* 헤더 */}
-      <header className="w-full h-[80px] flex justify-center items-center shadow-sm">
+      <header className="w-full h-[80px] flex justify-center items-center shadow-lg">
         <div className="relative max-w-7xl w-full h-full flex justify-center items-center text-sm">
           {/* 메뉴리스트 */}
           <ul className="flex space-x-16 text-lg z-10">
@@ -21,7 +22,9 @@ export default function Layout({ children }) {
           {/* login */}
           <div className="absolute right-0 h-full flex items-center ">
             <div className="relative flex space-x-2 ">
-              <p>로그인</p>
+              <Link to={"/login"}>
+                <p>로그인</p>
+              </Link>
               <p>|</p>
               <p>회원가입</p>
               <div className="absolute -top-5 right-0 text-xs text-gray-600">

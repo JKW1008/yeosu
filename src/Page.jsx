@@ -20,6 +20,9 @@ export default function Page() {
             hello
             <Button>Button</Button>
             <Input label="Username" />
+            <Button color="blue">color blue</Button>
+            <Input label="Username" error />
+            <Input label="Username" success />
           </div>
         </div>
       </Layout>
